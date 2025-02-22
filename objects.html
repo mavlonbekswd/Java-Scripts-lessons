@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       let  products = {
+        name: "Apple",
+        'price': '23 som',
+
+        rating: {
+            stars: {
+                total: 5,
+                count: 15
+            }
+        },
+
+        func:  function functions(){
+            console.log('Hello World');
+            console.log(this.name);
+        }
+
+       };
+       
+       console.log(products.rating.stars.total);
+       console.log(products.rating['stars']);
+       
+       
+
+       products.func();
+        
+       
+
+    </script>
+    <script src="LocalSrorage.js"></script>
+</body>
+</html>
