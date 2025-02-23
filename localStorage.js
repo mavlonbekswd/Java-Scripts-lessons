@@ -2,6 +2,9 @@
 // Local Storage is a technology used by JavaScript to store data in the user's browser for a long time. This data does not disappear even after closing the browser or refreshing the page. It is part of the Web Storage API and works much faster and more efficiently than cookies.
 //? JSON.stringify() is only used with setItem(), while JSON.parse() is used with getItem().
 
+
+
+
 //Set Item 
 const names =['Mario', 'Jerk','Oliver'];
 //! JSON.stringify -- In JavaScript, localStorage can only store text (strings)
@@ -17,7 +20,7 @@ console.log(getNames);
 
 
 
-let user = {
+export let user = {
     name: "Mavlono",
     age: 18,
     country: "UK"

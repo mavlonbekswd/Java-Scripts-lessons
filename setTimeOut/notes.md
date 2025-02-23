@@ -3,10 +3,10 @@ setTimeout() va setInterval() – bu JavaScript da kechiktirilgan va takroriy ba
 1. setTimeout() – Kodni ma’lum vaqt o‘tib bajarish
 setTimeout() funksiyasi belgilangan vaqt o‘tgandan keyin faqat bir marta bajariladigan kodni ishlatish uchun ishlatiladi.
 
-setTimeout(function, delay);
+setTimeout(function, time);
 
 function – Bajariladigan funksiya.
-delay – Millisekundlarda belgilangan kechikish (1 sekund = 1000ms).
+time – Millisekundlarda belgilangan kechikish (1 sekund = 1000ms).
 
 2. setInterval() – Kodni takroran bajarish
 setInterval() funksiyasi belgilangan vaqt oralig‘ida kodni qayta-qayta bajarish uchun ishlatiladi.
@@ -34,3 +34,4 @@ setTimeout() – Kodni faqat bir marta kechiktirib bajarish uchun ishlatiladi.
 setInterval() – Kodni cheksiz marta, har oraliqda bajarish uchun ishlatiladi.
 clearTimeout() va clearInterval() – Ularni bekor qilish uchun ishlatiladi.
 Rekursiv setTimeout() – dinamik interval yaratish uchun foydalidir.
+
