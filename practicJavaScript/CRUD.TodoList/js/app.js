@@ -19,10 +19,35 @@ const closeEl = document.getElementById('close')
   // osonroq yo'li 
   // let todos = JSON.parse(localStorage.getItem('list')) || [];
 
+  if (todos.length) showTodos()
+
+  // set todos
     function setTodos (){
         localStorage.setItem('list', JSON.stringify(todos))
         
     }
+
+// show todos on screen
+ function showTodos() {
+    const todos = JSON.parse(localStorage.getItem('list'))
+    todos.forEach((item,i) =>
+    {
+        listGroupTodo.innerHTML +=
+        `
+          <li class="list-group-item d-flex justify-content-between">
+            Hello world
+         <div class="todo-icons">
+            <span class="opacity-50 me-2">01.03.2025</span>
+             <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
+             <img src="./img/delete.svg" alt="delete icon" width="25" height="25" />
+           </div>
+         </li>
+        ` 
+ })
+
+ }
+
+
 
   // show error message
   function showMessage(where, message) {
