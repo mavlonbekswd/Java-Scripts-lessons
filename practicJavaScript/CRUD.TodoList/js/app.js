@@ -42,6 +42,7 @@ const closeEl = document.getElementById('close')
              <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
              <img src="./img/delete.svg" alt="delete icon" width="25" height="25" />
            </div>
+           
          </li>
         ` 
  })
