@@ -30,12 +30,13 @@ const closeEl = document.getElementById('close')
 // show todos on screen
  function showTodos() {
     const todos = JSON.parse(localStorage.getItem('list'))
+    listGroupTodo.innerHTML = ''; // list-group-todo uchun barcha elementlar o‘chiriladi.
     todos.forEach((item,i) =>
     {
         listGroupTodo.innerHTML +=
         `
           <li class="list-group-item d-flex justify-content-between">
-            Hello world
+            ${item.text}
          <div class="todo-icons">
             <span class="opacity-50 me-2">01.03.2025</span>
              <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
@@ -66,8 +67,9 @@ const closeEl = document.getElementById('close')
     // JavaScript-da trim() metodi string (matn) ichidagi boshi va oxiridagi bo‘sh joylarni olib tashlash uchun ishlatiladi.
     // formCreate['input-create'].value = ''; // inputni bo'sh qilish uchun ishlatiladi yokida..
     formCreate.reset();
+    
     setTodos(); // localStoragega saqlanish uchun ishlatiladi.
-
+    showTodos(); // ekranda ko'rinish
     if (todoText.length) {
         todos.push({
             text: todoText.trim(), 
