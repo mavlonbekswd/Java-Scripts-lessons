@@ -67,7 +67,7 @@ const closeEl = document.getElementById('close')
          <div class="todo-icons">
             <span class="opacity-50 me-2">${item.time}</span>
              <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
-             <img src="./img/delete.svg" alt="delete icon" width="25" height="25" />
+             <img  onclick = (deleteTodo(${i})) src="./img/delete.svg" alt="delete icon" width="25" height="25" />
            </div>
            
          </li>
@@ -110,4 +110,14 @@ const closeEl = document.getElementById('close')
         showMessage('message-create', 'Please enter something...');
     }
   });
+
+  // delete todo
+  function deleteTodo(id) {
+    const deletedTodos = todos.filter((item, i) => {
+      return i!== id;
+    })
+    todos = deletedTodos;
+    setTodos();
+    showTodos();
+  };
 
