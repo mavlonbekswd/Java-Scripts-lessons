@@ -19,6 +19,33 @@ const closeEl = document.getElementById('close')
   // osonroq yo'li 
   // let todos = JSON.parse(localStorage.getItem('list')) || [];
 
+
+  // time 
+  function getTime() {
+    const now = new Date();
+    const day = now.getDate() < 10 ? '0' + now.getDate() : now.getDate();
+    const month = now.getMonth() < 10 ? '0' + (now.getMonth() + 1) : now.getMonth();
+    const year = now.getFullYear();
+
+
+
+    //hours 
+    const hours = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+    const minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+
+
+    //month 
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month_title = now.getMonth();
+    fullDay.textContent = `${day} ${months[month_title]}, ${year}`;
+
+    hourEl.textContent = hours;
+    minuteEl.textContent = minutes;
+    
+    return `${hours}:${minutes}, ${day}.${month}.${year}`
+  }
+  setInterval(getTime, 1000);
+
   if (todos.length) showTodos()
 
   // set todos
@@ -38,7 +65,7 @@ const closeEl = document.getElementById('close')
           <li class="list-group-item d-flex justify-content-between">
             ${item.text}
          <div class="todo-icons">
-            <span class="opacity-50 me-2">01.03.2025</span>
+            <span class="opacity-50 me-2">${item.time}</span>
              <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
              <img src="./img/delete.svg" alt="delete icon" width="25" height="25" />
            </div>
@@ -74,7 +101,7 @@ const closeEl = document.getElementById('close')
     if (todoText.length) {
         todos.push({
             text: todoText.trim(), 
-            time: new Date(), 
+            time: getTime(), 
             completed:false});
             console.log(todos);
             
