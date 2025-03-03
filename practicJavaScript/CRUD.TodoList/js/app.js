@@ -113,9 +113,13 @@ const closeEl = document.getElementById('close')
 
   // delete todo
   function deleteTodo(id) {
+    // filter() – todos massivida har bir elementni tekshiradi va id ga teng bo‘lmaganlarni qoldiradi.
     const deletedTodos = todos.filter((item, i) => {
+      // i !== id – agar indeks (i) berilgan id ga teng bo‘lsa, uni o‘chiradi.
+      // Natija: id indeksiga teng bo‘lgan element o‘chirilgan yangi massiv (deletedTodos).
       return i!== id;
     })
+    // todos o‘zgaruvchisi yangilanadi – eski ro‘yxatdan id dagi element o‘chirilgan bo‘ladi.
     todos = deletedTodos;
     setTodos();
     showTodos();
