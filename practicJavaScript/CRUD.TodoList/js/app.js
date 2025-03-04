@@ -62,7 +62,7 @@ const closeEl = document.getElementById('close')
     {
         listGroupTodo.innerHTML +=
         `
-          <li class="list-group-item d-flex justify-content-between">
+          <li ondblclick ="setCompleted (${i})" class="list-group-item d-flex justify-content-between ${item.completed == true ? 'completed' : ''}">
             ${item.text}
          <div class="todo-icons">
             <span class="opacity-50 me-2">${item.time}</span>
@@ -124,4 +124,18 @@ const closeEl = document.getElementById('close')
     setTodos();
     showTodos();
   };
+
+  // setCompleted
+  function setCompleted(id) {
+    const completedTodos = todos.map((item, i) => {
+      if(id === i) {
+    return {...item, completed: item.completed == true ? false : true};
+      } else {
+      return {...item}
+      }
+    })
+    todos = completedTodos;
+    setTodos();
+    showTodos();
+  }
 
