@@ -12,6 +12,8 @@ const minuteEl = document.getElementById('minute')
 const secondEl = document.getElementById('second')
 const closeEl = document.getElementById('close')
 
+let editItemId
+
 //!check brinchi qiladigan ishimiz 
 // Agar localStorage da "list" mavjud bo‘lmasa, kod todos = [] bo‘lishini ta’minlaydi.
 // Bu usul localStorage dan ma'lumotlarni o‘qishda null yoki undefined bo‘lib qolishining oldini oladi.
@@ -66,7 +68,7 @@ const closeEl = document.getElementById('close')
             ${item.text}
          <div class="todo-icons">
             <span class="opacity-50 me-2">${item.time}</span>
-             <img src="./img/edit.svg" alt="edit icon" width="25" height="25" />
+             <img onclick = (editTodo(${i})) src="./img/edit.svg" alt="edit icon" width="25" height="25" />
              <img  onclick = (deleteTodo(${i})) src="./img/delete.svg" alt="delete icon" width="25" height="25" />
            </div>
            
@@ -138,4 +140,44 @@ const closeEl = document.getElementById('close')
     setTodos();
     showTodos();
   }
+
+  // edit form
+  formEdit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const todoText = formEdit['input-edit'].value.trim(); formEdit.reset() ;
+    if (todoText.length) {
+      todos.splice( editItemId, 1,{
+        text: todoText.trim(), 
+        time: getTime(), 
+        completed:false});
+        setTodos();
+        showTodos();
+        close();
+    } else {
+        showMessage('message-edit', 'Please enter something...');
+    }
+  });
+
+  //editTodos
+  function editTodo(id){ 
+    open() 
+    editItemId = id;
+  }
+
+  overlay.addEventListener('click', close)
+  closeEl.addEventListener('click', close)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close()
+  })
+
+  //modal open
+ function open(){
+   modal.classList.remove("hidden");
+   overlay.classList.remove("hidden");
+ }
+
+ function close(){
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
 
