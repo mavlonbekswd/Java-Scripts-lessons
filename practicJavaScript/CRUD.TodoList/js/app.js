@@ -176,8 +176,9 @@ let editItemId
    overlay.classList.remove("hidden");
  }
 
- function close(){
+ function close(){ 
   modal.classList.add("hidden");
+
   overlay.classList.add("hidden");
 }
 
