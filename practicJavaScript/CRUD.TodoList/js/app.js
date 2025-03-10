@@ -182,3 +182,15 @@ let editItemId
   overlay.classList.add("hidden");
 }
 
+numberOfSeries = +prompt("Nechta serial k'rdingiz");
+
+const seriesDB = {
+  count: numberOfSeries,
+  series: {},
+  actors:{},
+  genres:[],
+  private: false,
+
+
+}
+
