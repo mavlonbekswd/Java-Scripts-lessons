@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/if else/if.html"
+    "liveServer.settings.CustomBrowser": "safari"
+
 }
