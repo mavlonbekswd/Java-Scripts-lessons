@@ -43,4 +43,8 @@ console.log(Math.min(3, 3.5, 3.2)); // 3
 console.log(Math.random()); // 0.4321 (har safar turlicha) // Tasodifiy son yaratish
 console.log(Math.random()); // 0.7892
 
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
 
