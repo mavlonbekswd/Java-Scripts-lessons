@@ -28,5 +28,10 @@ let btn = document.querySelectorAll('button')
 btn.forEach((item, index) =>{
     item.addEventListener('click', () =>{
         console.log(index+1);
-    }) 
+    },
+    {once: true}
+) 
+    
 })
+
+
