@@ -1,0 +1,66 @@
+body {
+  background: #f4f7fc;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bmi-container {
+  width: 360px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+h1 {
+  text-align: center;
+  color: #229954;
+  font-size: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+label {
+  color: #325c42;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid #c1c7d0;
+  border-radius: 7px;
+  font-size: 1em;
+}
+
+button[type="submit"] {
+  padding: 10px 0;
+  background: #229954;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.07em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+button[type="submit"]:hover {
+  background: #18603b;
+}
+
+#bmiResult {
+  background: #f2f6fb;
+  border-radius: 8px;
+  padding: 15px 8px;
+  min-height: 36px;
+  font-size: 1.12em;
+  color: #1a2636;
+  font-weight: bold;
+  text-align: center;
+}

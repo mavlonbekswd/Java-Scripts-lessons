@@ -33,4 +33,26 @@ let myPromise = new Promise ((resolve, reject) => {
     console.error("An error occurred:", error);
   });
 
+  // Promise chain
+  new Promise((resolve) => {
+    resolve(5);
+  })
+  .then((result)=>{
+    console.log(result);
+    return result +10;
+    
+  })
+    .then((result)=>{
+        console.log(result);
+        return result + 20;
+        
+    })
+    .then((result)=>{
+        console.log(result);
+        
+        
+    })
+    .catch((error) => {
+        console.error("An error occurred:", error);
+      });
 

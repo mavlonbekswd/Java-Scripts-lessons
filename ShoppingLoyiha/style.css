@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 360px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+h1 {
+  text-align: center;
+  color: #2980b9;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+select, input[type="number"] {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #b6b6b6;
+  font-size: 16px;
+}
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #2980b9;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #15618f;
+}
+#cart {
+  background: #f9fafc;
+  border-radius: 8px;
+  padding: 16px 14px;
+}
+#cart h2 {
+  margin-top: 0;
+}
+#cartItems {
+  padding-left: 16px;
+}
+#totalPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 14px 0;
+}
+#clearCart {
+  background: #e74c3c;
+}
+#clearCart:hover {
+  background: #b83c28;
+}
